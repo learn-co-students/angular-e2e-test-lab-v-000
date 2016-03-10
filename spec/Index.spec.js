@@ -4,14 +4,12 @@ describe('angularjs homepage todo list', function() {
 	it('should add a new contact', function() {
 		browser.get('http://localhost:8080');
 
-		element(by.model('contact.name')).sendKeys('Number 4');
-		element(by.model('contact.phone')).sendKeys('000');
-		element(by.css('[ng-click="vm.addContact()"]')).click();
+		element(by.css('.button')).click();
 
-		var contacts = element.all(by.repeater('contact in mv.contacts'));
+		var contacts = element.all(by.repeater('contact in vm.contacts'));
 		expect(contacts.count()).toEqual(4);
-		expect(contacts.get(1).getText()).toEqual('Tim');
-		expect(contacts.get(1).getText()).toEqual('3934203242');
+		expect(contacts.get(1).element(by.model('contact.name')).getAttribute('value')).toBe('Tim');
+		expect(contacts.get(1).element(by.model('contact.phone')).getAttribute('value')).toBe('3934203242');
 
 		// Total count of contacts should be 4.
 // The name of the second contact should be 'Tim'.
