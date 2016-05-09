@@ -6,8 +6,9 @@ describe('index page', function() {
     element(by.css('.button')).click();
 
     var contacts = element.all(by.repeater('contact in vm.contacts'));
+    console.log(contacts);
     expect(contacts.count()).toEqual(4);
-    expect(contacts.get(1).name.getText()).toEqual('Tim');
-    expect(contacts.get(1).phone.getText()).toEqual('3934203242');
+    expect(contacts.get(1).element(by.model('contact.name')).getAttribute('value')).toBe('Tim');
+    expect(contacts.get(1).element(by.model('contact.phone')).getAttribute('value')).toBe('3934203242');
 	});
 });
