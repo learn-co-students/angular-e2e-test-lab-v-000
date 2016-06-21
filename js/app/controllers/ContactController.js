@@ -13,7 +13,7 @@ function ContactController() {
     this.addContact = function () {
         this.contacts.push({
             name: 'New Contact',
-            phone: 'Phone Number'
+            phone: 'New Phone'
         });
     }
 }
