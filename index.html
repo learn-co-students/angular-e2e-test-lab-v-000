@@ -11,7 +11,7 @@
     <div ng-app="app" class="app">
         <div ng-controller="ContactController as vm">
             <ul>
-                <li ng-repeat="contact in vm.contacts">
+                <li ng-repeat="contact in vm.contacts" ng-class="{'last':$last}">
                     <h4>Name: <input ng-model="contact.name" /></h4>
                     <h6>Phone: <input ng-model="contact.phone" /></h6>
                 </li>
