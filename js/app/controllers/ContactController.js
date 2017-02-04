@@ -15,7 +15,7 @@ function ContactController() {
             name: 'New Contact',
             phone: 'Phone Number'
         });
-    }
+    };
 }
 
 angular
